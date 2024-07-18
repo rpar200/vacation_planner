@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "D308_android_project"
+rootProject.name = "erde_vacation_planner"
 include ':app'

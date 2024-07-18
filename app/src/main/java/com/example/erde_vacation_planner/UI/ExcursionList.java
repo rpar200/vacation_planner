@@ -1,4 +1,4 @@
-//package com.example.d308_android_project.UI;
+//package com.example.erde_vacation_planner.UI;
 //
 //import android.os.Bundle;
 //
@@ -8,7 +8,7 @@
 //import androidx.core.view.ViewCompat;
 //import androidx.core.view.WindowInsetsCompat;
 //
-//import com.example.d308_android_project.R;
+//import com.example.erde_vacation_planner.R;
 //
 //public class ExcursionList extends AppCompatActivity {
 //
