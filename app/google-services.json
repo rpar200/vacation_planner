@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "110594845084",
+    "project_id": "erde-vacation-planner-auth",
+    "storage_bucket": "erde-vacation-planner-auth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110594845084:android:9f1e6fc493994184304059",
+        "android_client_info": {
+          "package_name": "com.erde.erde_vacation_planner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK0MU_h_pRDIt5BgRZybpfXofZY1s_QUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
