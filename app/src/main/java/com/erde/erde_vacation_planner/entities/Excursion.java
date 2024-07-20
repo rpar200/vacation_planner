@@ -11,12 +11,14 @@ public class Excursion {
     // foreign key
     private int vacationID;
     private String startDate;
+    private String owner;
 
-    public Excursion(int excursionID, String excursionName, int vacationID, String startDate) {
+    public Excursion(int excursionID, String excursionName, int vacationID, String startDate, String owner) {
         this.excursionID = excursionID;
         this.excursionName = excursionName;
         this.vacationID = vacationID;
         this.startDate = startDate;
+        this.owner = owner;
     }
 
     public int getExcursionID() {
@@ -49,5 +51,13 @@ public class Excursion {
 
     public void setStartDate(String startDate) {
         this.startDate = startDate;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner() {
+        this.owner = owner;
     }
 }

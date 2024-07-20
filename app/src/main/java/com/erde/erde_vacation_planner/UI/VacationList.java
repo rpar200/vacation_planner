@@ -16,14 +16,17 @@ import com.erde.erde_vacation_planner.R;
 import com.erde.erde_vacation_planner.dao.Repository;
 import com.erde.erde_vacation_planner.entities.Vacation;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
 public class VacationList extends AppCompatActivity {
     private Repository repository;
+    private String owner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        owner = FirebaseAuth.getInstance().getCurrentUser().getUid();
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_vacation_list);
@@ -37,7 +40,7 @@ public class VacationList extends AppCompatActivity {
         });
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         repository = new Repository(getApplication());
-        List<Vacation> allVacations = repository.getmAllVacations();
+        List<Vacation> allVacations = repository.getmAllVacationsWithOwner(owner);
         final VacationAdapter vacationAdapter = new VacationAdapter(this);
         recyclerView.setAdapter(vacationAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -53,7 +56,7 @@ public class VacationList extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        List<Vacation> allVacations = repository.getmAllVacations();
+        List<Vacation> allVacations = repository.getmAllVacationsWithOwner(owner);
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         final VacationAdapter vacationAdapter = new VacationAdapter(this);
         recyclerView.setAdapter(vacationAdapter);

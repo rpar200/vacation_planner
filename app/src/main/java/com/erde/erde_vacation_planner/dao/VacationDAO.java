@@ -24,4 +24,7 @@ public interface VacationDAO {
 
     @Query("SELECT * FROM Vacation ORDER BY vacationID ASC")
     List<Vacation> getAllVacations();
+
+    @Query("SELECT * FROM Vacation WHERE owner = :owner ORDER BY vacationID ASC")
+    List<Vacation> getAllVacationsWithOwner(String owner);
 }

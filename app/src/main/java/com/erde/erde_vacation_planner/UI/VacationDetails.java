@@ -27,6 +27,7 @@ import com.erde.erde_vacation_planner.dao.Repository;
 import com.erde.erde_vacation_planner.entities.Excursion;
 import com.erde.erde_vacation_planner.entities.Vacation;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -43,6 +44,7 @@ public class VacationDetails extends AppCompatActivity {
     String startDate;
     String endDate;
     int vacationID;
+    String owner;
     Vacation currentVacation;
     int numVacations;
 
@@ -74,6 +76,7 @@ public class VacationDetails extends AppCompatActivity {
         startDate = getIntent().getStringExtra("startdate");
         endDate = getIntent().getStringExtra("enddate");
         vacationID = getIntent().getIntExtra("id", -1);
+        owner = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         String dateFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(dateFormat, Locale.US);
@@ -151,6 +154,7 @@ public class VacationDetails extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(VacationDetails.this, ExcursionDetails.class);
                 intent.putExtra("vacationid", vacationID);
+                intent.putExtra("owner", owner);
                 startActivity(intent);
             }
         });
@@ -204,7 +208,7 @@ public class VacationDetails extends AppCompatActivity {
                 } else {
                     vacationID = repository.getmAllVacations().get(repository.getmAllVacations().size() - 1).getVacationID() + 1;
                 }
-                vacation = new Vacation(vacationID, editName.getText().toString(), editHousing.getText().toString(), editStartDate.getText().toString(), editEndDate.getText().toString());
+                vacation = new Vacation(vacationID, editName.getText().toString(), editHousing.getText().toString(), editStartDate.getText().toString(), editEndDate.getText().toString(), owner);
                 try {
                     Date vacationStartDate = sdf.parse(vacation.getStartDate());
                     Date vacationEndDate = sdf.parse(vacation.getEndDate());
@@ -220,7 +224,7 @@ public class VacationDetails extends AppCompatActivity {
                     e.printStackTrace();
                 }
             } else {
-                vacation = new Vacation(vacationID, editName.getText().toString(), editHousing.getText().toString(), editStartDate.getText().toString(), editEndDate.getText().toString());
+                vacation = new Vacation(vacationID, editName.getText().toString(), editHousing.getText().toString(), editStartDate.getText().toString(), editEndDate.getText().toString(), owner);
                 try {
                     Date vacationStartDate = sdf.parse(vacation.getStartDate());
                     Date vacationEndDate = sdf.parse(vacation.getEndDate());

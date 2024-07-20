@@ -36,6 +36,7 @@ public class ExcursionDetails extends AppCompatActivity {
     String startDate;
     int vacationID;
     int excursionID;
+    String owner;
     Excursion currentExcursion;
 
     EditText editName;
@@ -60,6 +61,7 @@ public class ExcursionDetails extends AppCompatActivity {
         startDate = getIntent().getStringExtra("startdate");
         excursionID = getIntent().getIntExtra("id", -1);
         vacationID = getIntent().getIntExtra("vacationid", -1);
+        owner = getIntent().getStringExtra("owner");
 
         String dateFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(dateFormat, Locale.US);
@@ -123,13 +125,22 @@ public class ExcursionDetails extends AppCompatActivity {
             SimpleDateFormat sdf = new SimpleDateFormat(dateFormat, Locale.US);
             Date vacationStartDate = new Date();
             Date vacationEndDate = new Date();
+
+            for (Excursion exc : repository.getmAllExcursions()) {
+                if (exc.getExcursionID() == excursionID) {
+                    currentExcursion = exc;
+                }
+            }
+            if (currentExcursion != null) {
+                owner = currentExcursion.getOwner();
+            }
             if (excursionID == -1) {
                 if (repository.getmAllExcursions().isEmpty()) {
                     excursionID = 1;
                 } else {
                     excursionID = repository.getmAllExcursions().get(repository.getmAllExcursions().size() - 1).getExcursionID() + 1;
                 }
-                excursion = new Excursion(excursionID, editName.getText().toString(), vacationID, editStartDate.getText().toString());
+                excursion = new Excursion(excursionID, editName.getText().toString(), vacationID, editStartDate.getText().toString(), owner);
                 try {
                     for (Vacation vacation : repository.getmAllVacations()) {
                         if (vacation.getVacationID() == vacationID) {
@@ -153,7 +164,7 @@ public class ExcursionDetails extends AppCompatActivity {
                 repository.insert(excursion);
                 this.finish();
             } else {
-                excursion = new Excursion(excursionID, editName.getText().toString(), vacationID, editStartDate.getText().toString());
+                excursion = new Excursion(excursionID, editName.getText().toString(), vacationID, editStartDate.getText().toString(), owner);
                 try {
                     for (Vacation vacation : repository.getmAllVacations()) {
                         if (vacation.getVacationID() == vacationID) {
@@ -167,7 +178,7 @@ public class ExcursionDetails extends AppCompatActivity {
                         return false;
                     } else {
                         repository.insert(excursion);
-                        Toast.makeText(ExcursionDetails.this, excursion.getExcursionName() + "Excursion was saved.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ExcursionDetails.this, excursion.getExcursionName() + " was saved.", Toast.LENGTH_LONG).show();
                         this.finish();
                         return true;
                     }

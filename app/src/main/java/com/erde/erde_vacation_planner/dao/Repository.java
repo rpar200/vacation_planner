@@ -15,6 +15,7 @@ public class Repository {
 
     private List<Vacation> mAllVacations;
     private List<Excursion> mAllExcursions;
+    private String owner;
 
     private static int NUMBER_OF_THREADS = 4;
     private final ExecutorService databaseExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
@@ -28,6 +29,19 @@ public class Repository {
     public List<Vacation>getmAllVacations() {
         databaseExecutor.execute(()-> {
             mAllVacations = mVacationDAO.getAllVacations();
+        });
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return mAllVacations;
+    }
+
+    public List<Vacation>getmAllVacationsWithOwner(String owner) {
+        databaseExecutor.execute(()-> {
+            mAllVacations = mVacationDAO.getAllVacationsWithOwner(owner);
         });
 
         try {
