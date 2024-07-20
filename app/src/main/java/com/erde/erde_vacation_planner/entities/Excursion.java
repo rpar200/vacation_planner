@@ -1,4 +1,4 @@
-package com.example.erde_vacation_planner.entities;
+package com.erde.erde_vacation_planner.entities;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

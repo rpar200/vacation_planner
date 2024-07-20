@@ -1,4 +1,4 @@
-package com.example.erde_vacation_planner;
+package com.erde.erde_vacation_planner;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.erde_vacation_planner", appContext.getPackageName());
+        assertEquals("com.erde.erde_vacation_planner", appContext.getPackageName());
     }
 }

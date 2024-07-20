@@ -1,4 +1,4 @@
-package com.example.erde_vacation_planner.UI;
+package com.erde.erde_vacation_planner.UI;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.erde_vacation_planner.R;
+import com.erde.erde_vacation_planner.R;
 
 public class MainActivity extends AppCompatActivity {
     public static int numAlert;

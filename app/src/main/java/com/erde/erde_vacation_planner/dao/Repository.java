@@ -1,9 +1,9 @@
-package com.example.erde_vacation_planner.dao;
+package com.erde.erde_vacation_planner.dao;
 
 import android.app.Application;
 
-import com.example.erde_vacation_planner.entities.Excursion;
-import com.example.erde_vacation_planner.entities.Vacation;
+import com.erde.erde_vacation_planner.entities.Excursion;
+import com.erde.erde_vacation_planner.entities.Vacation;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;

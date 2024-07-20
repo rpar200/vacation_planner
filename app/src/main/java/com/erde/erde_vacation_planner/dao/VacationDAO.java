@@ -1,4 +1,4 @@
-package com.example.erde_vacation_planner.dao;
+package com.erde.erde_vacation_planner.dao;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -7,7 +7,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.erde_vacation_planner.entities.Vacation;
+import com.erde.erde_vacation_planner.entities.Vacation;
 
 import java.util.List;
 

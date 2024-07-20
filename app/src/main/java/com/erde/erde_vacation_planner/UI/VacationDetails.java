@@ -1,4 +1,4 @@
-package com.example.erde_vacation_planner.UI;
+package com.erde.erde_vacation_planner.UI;
 
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
@@ -22,10 +22,10 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.erde_vacation_planner.R;
-import com.example.erde_vacation_planner.dao.Repository;
-import com.example.erde_vacation_planner.entities.Excursion;
-import com.example.erde_vacation_planner.entities.Vacation;
+import com.erde.erde_vacation_planner.R;
+import com.erde.erde_vacation_planner.dao.Repository;
+import com.erde.erde_vacation_planner.entities.Excursion;
+import com.erde.erde_vacation_planner.entities.Vacation;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.ParseException;

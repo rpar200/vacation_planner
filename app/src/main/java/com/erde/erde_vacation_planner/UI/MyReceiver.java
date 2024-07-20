@@ -1,4 +1,4 @@
-  package com.example.erde_vacation_planner.UI;
+  package com.erde.erde_vacation_planner.UI;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 
-import com.example.erde_vacation_planner.R;
+import com.erde.erde_vacation_planner.R;
 
   public class MyReceiver extends BroadcastReceiver {
       String channel_ID = "chanID";

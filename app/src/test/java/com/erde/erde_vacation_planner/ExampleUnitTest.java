@@ -1,4 +1,4 @@
-package com.example.erde_vacation_planner;
+package com.erde.erde_vacation_planner;
 
 import org.junit.Test;
 

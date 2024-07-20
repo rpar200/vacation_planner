@@ -1,4 +1,4 @@
-package com.example.erde_vacation_planner.dao;
+package com.erde.erde_vacation_planner.dao;
 
 import android.content.Context;
 
@@ -6,8 +6,8 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.example.erde_vacation_planner.entities.Excursion;
-import com.example.erde_vacation_planner.entities.Vacation;
+import com.erde.erde_vacation_planner.entities.Excursion;
+import com.erde.erde_vacation_planner.entities.Vacation;
 
 @Database(entities = {Vacation.class, Excursion.class}, version = 16, exportSchema = false)
 public abstract class DatabaseBuilder extends RoomDatabase {

@@ -1,4 +1,4 @@
-package com.example.erde_vacation_planner.UI;
+package com.erde.erde_vacation_planner.UI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.erde_vacation_planner.R;
-import com.example.erde_vacation_planner.entities.Vacation;
+import com.erde.erde_vacation_planner.R;
+import com.erde.erde_vacation_planner.entities.Vacation;
 
 import java.util.List;
 

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.erde_vacation_planner'
+    namespace 'com.erde.erde_vacation_planner'
     compileSdk 34
 
     defaultConfig {
-        applicationId 'com.example.erde_vacation_planner'
+        applicationId 'com.erde.erde_vacation_planner'
         minSdk 26
         targetSdk 34
         versionCode 1
