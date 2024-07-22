@@ -16,6 +16,7 @@ import com.erde.erde_vacation_planner.entities.Excursion;
 import java.util.List;
 
 public class ExcursionAdapter extends RecyclerView.Adapter<ExcursionAdapter.ExcursionViewHolder> {
+    //Encapsulation can be seen here. These are private fields only accessible within this class.
     private List<Excursion> mExcursions;
     private final Context context;
     private final LayoutInflater mInflater;

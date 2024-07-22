@@ -16,6 +16,7 @@ import com.erde.erde_vacation_planner.entities.Vacation;
 import java.util.List;
 
 public class VacationAdapter extends RecyclerView.Adapter<VacationAdapter.VacationViewHolder> {
+    //Encapsulation can be seen here. These are private fields only accessible within this class.
     private List<Vacation> mVacations;
     private final Context context;
     private final LayoutInflater mInflater;

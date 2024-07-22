@@ -113,7 +113,7 @@ public class ExcursionDetails extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem menuItem) {
-
+        // Polymorphism can be seen here. The onOptionsItemSelected method performs different actions based on the different menu items selected.
         if (menuItem.getItemId() == android.R.id.home) {
             this.finish();
             return true;

@@ -11,6 +11,7 @@ import com.erde.erde_vacation_planner.entities.Vacation;
 
 @Database(entities = {Vacation.class, Excursion.class}, version = 23, exportSchema = false)
 public abstract class DatabaseBuilder extends RoomDatabase {
+    // Inheritance can be seen here. The abstract class DatabaseBuilder inherits from RoomDatabase.
     public abstract VacationDAO vacationDAO();
     public abstract ExcursionDAO excursionDAO();
     private static volatile DatabaseBuilder INSTANCE;
