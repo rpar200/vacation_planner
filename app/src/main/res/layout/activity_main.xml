@@ -13,11 +13,11 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_centerVertical="true"
+        android:alpha="0.5"
         android:background="@drawable/homebackground"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:alpha="0.5">
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/button"
@@ -31,11 +31,11 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/button"
+            android:layout_centerHorizontal="true"
             android:text="Vacation Planner"
             android:textColor="#355016"
-            android:textSize="32sp"
-            android:layout_centerHorizontal="true"
-            android:layout_above="@+id/button"/>
+            android:textSize="32sp" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

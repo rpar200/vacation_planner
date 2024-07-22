@@ -26,8 +26,8 @@ public class Repository {
         mVacationDAO = db.vacationDAO();
     }
 
-    public List<Vacation>getmAllVacations() {
-        databaseExecutor.execute(()-> {
+    public List<Vacation> getmAllVacations() {
+        databaseExecutor.execute(() -> {
             mAllVacations = mVacationDAO.getAllVacations();
         });
 
@@ -39,8 +39,8 @@ public class Repository {
         return mAllVacations;
     }
 
-    public List<Vacation>getmAllVacationsWithOwner(String owner) {
-        databaseExecutor.execute(()-> {
+    public List<Vacation> getmAllVacationsWithOwner(String owner) {
+        databaseExecutor.execute(() -> {
             mAllVacations = mVacationDAO.getAllVacationsWithOwner(owner);
         });
 
@@ -52,8 +52,8 @@ public class Repository {
         return mAllVacations;
     }
 
-    public List<Excursion>getmAllExcursions() {
-        databaseExecutor.execute(()-> {
+    public List<Excursion> getmAllExcursions() {
+        databaseExecutor.execute(() -> {
             mAllExcursions = mExcursionDAO.getAllExcursions();
         });
 
@@ -65,8 +65,8 @@ public class Repository {
         return mAllExcursions;
     }
 
-    public List<Excursion>getAssociatedExcursions(int vacationID) {
-        databaseExecutor.execute(()-> {
+    public List<Excursion> getAssociatedExcursions(int vacationID) {
+        databaseExecutor.execute(() -> {
             mAllExcursions = mExcursionDAO.getAssociatedExcursions(vacationID);
         });
 
@@ -78,7 +78,7 @@ public class Repository {
         return mAllExcursions;
     }
 
-// Insert, Update, and Delete functionality for Vacations
+    // Insert, Update, and Delete functionality for Vacations
     public void insert(Vacation vacation) {
         databaseExecutor.execute(() -> {
             mVacationDAO.insert(vacation);

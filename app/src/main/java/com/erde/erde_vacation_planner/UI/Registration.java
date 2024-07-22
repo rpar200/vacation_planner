@@ -43,20 +43,20 @@ public class Registration extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user  = mEmail.getText().toString().trim();
+                String user = mEmail.getText().toString().trim();
                 String pass = mPassword.getText().toString().trim();
 
-                if(user.isEmpty()){
+                if (user.isEmpty()) {
                     mEmail.setError("Email is required.");
                     return;
                 }
 
-                if(pass.isEmpty()){
+                if (pass.isEmpty()) {
                     mPassword.setError("Password is required.");
                     return;
                 }
 
-                if(pass.length() < 8){
+                if (pass.length() < 8) {
                     mPassword.setError("Password must be at least 8 characters.");
                 } else {
                     auth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -72,6 +72,6 @@ public class Registration extends AppCompatActivity {
                     });
                 }
             }
-        }); 
+        });
     }
 }

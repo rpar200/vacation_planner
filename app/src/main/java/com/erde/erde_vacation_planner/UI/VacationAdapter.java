@@ -26,7 +26,7 @@ public class VacationAdapter extends RecyclerView.Adapter<VacationAdapter.Vacati
         this.context = context;
     }
 
-    public class VacationViewHolder extends RecyclerView.ViewHolder{
+    public class VacationViewHolder extends RecyclerView.ViewHolder {
         private final TextView vacationItemView;
 
 
@@ -68,10 +68,9 @@ public class VacationAdapter extends RecyclerView.Adapter<VacationAdapter.Vacati
     @Override
     public int getItemCount() {
         //return the size of the vacations list. If list isn't initialized, return 0.
-        if (mVacations != null){
+        if (mVacations != null) {
             return mVacations.size();
-    }
-        else return 0;
+        } else return 0;
     }
 
     public void setVacations(List<Vacation> vacations) {

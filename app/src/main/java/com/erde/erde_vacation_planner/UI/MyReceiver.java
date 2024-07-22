@@ -1,4 +1,4 @@
-  package com.erde.erde_vacation_planner.UI;
+package com.erde.erde_vacation_planner.UI;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -12,9 +12,9 @@ import androidx.core.app.NotificationCompat;
 
 import com.erde.erde_vacation_planner.R;
 
-  public class MyReceiver extends BroadcastReceiver {
-      String channel_ID = "chanID";
-      static int notificationID;
+public class MyReceiver extends BroadcastReceiver {
+    String channel_ID = "chanID";
+    static int notificationID;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -29,6 +29,7 @@ import com.erde.erde_vacation_planner.R;
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(notificationID++, n);
     }
+
     private void createNotificationChannel(Context context, String CHANNEL_ID) {
         CharSequence name = "mychannelname";
         String description = "mychanneldescription";

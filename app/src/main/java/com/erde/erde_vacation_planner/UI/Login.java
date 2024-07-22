@@ -49,21 +49,19 @@ public class Login extends AppCompatActivity {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
 
-                if(TextUtils.isEmpty(email)){
+                if (TextUtils.isEmpty(email)) {
                     mEmail.setError("Email is required.");
                     return;
                 }
 
-                if(TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(password)) {
                     mPassword.setError("Password is required.");
                     return;
                 }
 
-                if(password.length() < 8){
+                if (password.length() < 8) {
                     mPassword.setError("Password must be at least 8 characters.");
-                }
-
-              else {
+                } else {
                     auth.signInWithEmailAndPassword(email, password)
                             .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                 @Override
