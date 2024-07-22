@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -18,18 +19,37 @@ import com.erde.erde_vacation_planner.entities.Vacation;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class VacationList extends AppCompatActivity {
     private Repository repository;
     private String owner;
+    private List<Vacation> vacationList;
+    SearchView searchView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        owner = FirebaseAuth.getInstance().getCurrentUser().getUid();
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_vacation_list);
+        owner = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        searchView = findViewById(R.id.search);
+        searchView.clearFocus();
+        // Implemented onQueryTextListener for the search bar to filter the list of vacations using the filterList method.
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterList(newText);
+                return true;
+            }
+        });
         FloatingActionButton fab = findViewById(R.id.floatingActionButton5);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +71,26 @@ public class VacationList extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    /* filterList method was created that is triggered upon text change in the search bar.
+    A compare is performed to a newly created ArrayList that stores the vacation depending on if the character sequence matches the actual vacation. */
+    private void filterList(String text) {
+        List<Vacation> filteredList = new ArrayList<>();
+        vacationList = repository.getmAllVacationsWithOwner(owner);
+        final VacationAdapter vacationAdapter = new VacationAdapter(this);
+        RecyclerView recyclerView = findViewById(R.id.recyclerview);
+        recyclerView.setAdapter(vacationAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        vacationAdapter.setVacations(filteredList);
+        for (Vacation vacation : vacationList) {
+            if (vacation.getVacationName().toLowerCase().startsWith(text.toLowerCase())) {
+                filteredList.add(vacation);
+            }
+        }
+        if (!filteredList.isEmpty()) {
+            vacationAdapter.setVacations(filteredList);
+        }
     }
 
     @Override
