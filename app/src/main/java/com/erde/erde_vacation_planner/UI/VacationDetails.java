@@ -158,6 +158,7 @@ public class VacationDetails extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        // The recycler view is populated with data directly from the database which ensures scalability.
         RecyclerView recyclerView = findViewById(R.id.excursionrecyclerview);
         repository = new Repository(getApplication());
         final ExcursionAdapter excursionAdapter = new ExcursionAdapter(this);

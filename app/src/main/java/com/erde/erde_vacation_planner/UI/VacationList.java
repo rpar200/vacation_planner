@@ -58,6 +58,7 @@ public class VacationList extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        // The recycler view is populated with data directly from the database which ensures scalability.
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         repository = new Repository(getApplication());
         List<Vacation> allVacations = repository.getmAllVacationsWithOwner(owner);
