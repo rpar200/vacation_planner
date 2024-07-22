@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.erde_vacation_planner"
         tools:targetApi="31">
+        <!-- All activities (minus login page) are given a parent activity to implement android's native back button for smooth navigation. -->
         <activity
             android:name=".UI.Registration"
             android:exported="false"
