@@ -211,6 +211,7 @@ public class VacationDetails extends AppCompatActivity {
                 }
                 vacation = new Vacation(vacationID, editName.getText().toString(), editHousing.getText().toString(), editStartDate.getText().toString(), editEndDate.getText().toString(), owner);
                 try {
+                    // Validation can be seen here. Date validation is performed to ensure that the vacation end date is AFTER the vacation start date.
                     Date vacationStartDate = sdf.parse(vacation.getStartDate());
                     Date vacationEndDate = sdf.parse(vacation.getEndDate());
                     if (vacationEndDate.before(vacationStartDate)) {
@@ -227,6 +228,7 @@ public class VacationDetails extends AppCompatActivity {
             } else {
                 vacation = new Vacation(vacationID, editName.getText().toString(), editHousing.getText().toString(), editStartDate.getText().toString(), editEndDate.getText().toString(), owner);
                 try {
+                    // Validation can be seen here. Date validation is performed to ensure that the vacation end date is AFTER the vacation start date.
                     Date vacationStartDate = sdf.parse(vacation.getStartDate());
                     Date vacationEndDate = sdf.parse(vacation.getEndDate());
                     if (vacationEndDate.before(vacationStartDate)) {
@@ -258,6 +260,7 @@ public class VacationDetails extends AppCompatActivity {
                 Toast.makeText(VacationDetails.this, "Vacation does not exist.", Toast.LENGTH_LONG).show();
             }
             if (numVacations == 0) {
+                // Validation can be seen here. Validation is performed to ensure that vacations with excursions associated with it can not be removed.
                 repository.delete(currentVacation);
                 Toast.makeText(VacationDetails.this, currentVacation.getVacationName() + " was deleted.", Toast.LENGTH_LONG).show();
                 this.finish();

@@ -150,6 +150,7 @@ public class ExcursionDetails extends AppCompatActivity {
                     }
                     Date excursionStartDate = sdf.parse(excursion.getStartDate());
                     if ((excursionStartDate.before(vacationStartDate)) || (excursionStartDate.after(vacationEndDate))) {
+                        // Validation can be seen here. Date validation is performed to ensure that excursions must be within the date range of the associated vacation.
                         Toast.makeText(ExcursionDetails.this, "Excursion must be during the vacation.", Toast.LENGTH_LONG).show();
                         return false;
                     } else {
@@ -174,6 +175,7 @@ public class ExcursionDetails extends AppCompatActivity {
                     }
                     Date excursionStartDate = sdf.parse(excursion.getStartDate());
                     if ((excursionStartDate.before(vacationStartDate)) || (excursionStartDate.after(vacationEndDate))) {
+                        // Validation can be seen here. Date validation is performed to ensure that excursions must be within the date range of the associated vacation.
                         Toast.makeText(ExcursionDetails.this, "Excursion must be during the vacation.", Toast.LENGTH_LONG).show();
                         return false;
                     } else {
