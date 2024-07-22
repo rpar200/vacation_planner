@@ -13,6 +13,7 @@ import java.util.List;
 
 @Dao
 public interface VacationDAO {
+    // Database functionality with the ability to insert, update, and delete vacations can be seen here.
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Vacation vacation);
 

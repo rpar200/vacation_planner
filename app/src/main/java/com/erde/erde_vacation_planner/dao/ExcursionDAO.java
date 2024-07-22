@@ -13,6 +13,7 @@ import java.util.List;
 
 @Dao
 public interface ExcursionDAO {
+    // Database functionality with the ability to insert, update, and delete excursions can be seen here.
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Excursion excursion);
 
