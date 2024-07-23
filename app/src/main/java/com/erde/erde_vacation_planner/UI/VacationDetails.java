@@ -89,7 +89,6 @@ public class VacationDetails extends AppCompatActivity {
         editStartDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Date date;
                 String info = editStartDate.getText().toString();
                 try {
                     myCalendar.setTime(sdf.parse(info));

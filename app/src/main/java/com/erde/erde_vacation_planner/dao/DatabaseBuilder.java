@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.erde.erde_vacation_planner.entities.Excursion;
 import com.erde.erde_vacation_planner.entities.Vacation;
 
-@Database(entities = {Vacation.class, Excursion.class}, version = 23, exportSchema = false)
+@Database(entities = {Vacation.class, Excursion.class}, version = 24, exportSchema = false)
 public abstract class DatabaseBuilder extends RoomDatabase {
     // Inheritance can be seen here. The abstract class DatabaseBuilder inherits from RoomDatabase.
     public abstract VacationDAO vacationDAO();
