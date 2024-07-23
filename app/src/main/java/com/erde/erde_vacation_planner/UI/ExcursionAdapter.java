@@ -57,6 +57,7 @@ public class ExcursionAdapter extends RecyclerView.Adapter<ExcursionAdapter.Excu
     @Override
     public void onBindViewHolder(@NonNull ExcursionAdapter.ExcursionViewHolder holder, int position) {
         // Display excursion name instead of the android:text for the TextView
+        // The recycler view displays a report of the excursion name and the date of the excursion.
         if (mExcursions != null) {
             Excursion current = mExcursions.get(position);
             String name = current.getExcursionName();
