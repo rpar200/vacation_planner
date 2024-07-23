@@ -5,14 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.ExcursionDetails">
+    tools:context=".UI.ExcursionDetails"
+    android:background="#A9D26C">
 
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="448dp"
         android:layout_height="250dp"
         android:layout_marginTop="50dp"
-        android:background="#E6AE5C"
+        android:background="#D5ECEE"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -53,7 +54,8 @@
                 <Button
                     android:id="@+id/startdate"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#99B7C2" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

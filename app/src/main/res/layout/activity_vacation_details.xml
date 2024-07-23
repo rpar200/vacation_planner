@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A9D26C"
     tools:context=".UI.VacationDetails">
 
     <ScrollView
@@ -12,7 +13,7 @@
         android:layout_width="448dp"
         android:layout_height="250dp"
         android:layout_marginTop="50dp"
-        android:background="#E6AE5C"
+        android:background="#D5ECEE"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -69,7 +70,8 @@
                 <Button
                     android:id="@+id/startdate"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#99B7C2" />
             </LinearLayout>
 
             <LinearLayout
@@ -85,7 +87,8 @@
                 <Button
                     android:id="@+id/enddate"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#99B7C2" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -95,18 +98,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        app:backgroundTint="#E5C580"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/baseline_add_24" />
 
+    <TextView
+        android:id="@+id/excursions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Excursions"
+        android:textAlignment="center"
+        android:textColor="#695628"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/scrollview" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/excursionrecyclerview"
-        android:layout_width="446dp"
-        android:layout_height="665dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollview"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintTop_toBottomOf="@+id/excursions" />
 </androidx.constraintlayout.widget.ConstraintLayout>

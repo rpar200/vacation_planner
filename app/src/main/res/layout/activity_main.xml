@@ -24,7 +24,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:backgroundTint="#B87A7A"
+            android:backgroundTint="#99B7C2"
             android:text="Enter" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/button"
             android:layout_centerHorizontal="true"
-            android:text="Vacation Planner"
+            android:text="Erde Vacation Planner"
             android:textColor="#355016"
             android:textSize="32sp" />
     </RelativeLayout>
