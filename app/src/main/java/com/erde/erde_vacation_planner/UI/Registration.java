@@ -66,7 +66,7 @@ public class Registration extends AppCompatActivity {
                     mPassword.setError("Password must be at least 8 characters.");
                 }
 
-                else if (!pass.equals(verifypass)) {);
+                else if (!pass.equals(verifypass)) {
                     mVerifyPassword.setError("Passwords do not match.");
 
                 } else {
