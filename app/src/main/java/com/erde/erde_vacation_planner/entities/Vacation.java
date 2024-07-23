@@ -70,7 +70,7 @@ public class Vacation {
         return owner;
     }
 
-    public void setOwner() {
+    public void setOwner(String owner) {
         this.owner = owner;
     }
 }

@@ -57,7 +57,7 @@ public class Excursion {
         return owner;
     }
 
-    public void setOwner() {
+    public void setOwner(int vacationID) {
         this.owner = owner;
     }
 }
