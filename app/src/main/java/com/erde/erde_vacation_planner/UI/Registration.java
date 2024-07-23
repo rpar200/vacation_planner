@@ -19,14 +19,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.erde.erde_vacation_planner.R;
 
 public class Registration extends AppCompatActivity {
-    String email;
-    String password;
 
     Button register;
     FirebaseAuth auth;
 
     EditText mEmail;
     EditText mPassword;
+    EditText mVerifyPassword;
 
 
     @Override
@@ -38,6 +37,7 @@ public class Registration extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         mEmail = findViewById(R.id.email);
         mPassword = findViewById(R.id.password);
+        mVerifyPassword = findViewById(R.id.verifypassword);
         register = findViewById(R.id.register);
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -45,9 +45,15 @@ public class Registration extends AppCompatActivity {
             public void onClick(View view) {
                 String user = mEmail.getText().toString().trim();
                 String pass = mPassword.getText().toString().trim();
+                String verifypass = mVerifyPassword.getText().toString().trim();
 
                 if (user.isEmpty()) {
                     mEmail.setError("Email is required.");
+                    return;
+                }
+
+                if (!android.util.Patterns.EMAIL_ADDRESS.matcher(user).matches()) {
+                    mEmail.setError("Please enter a valid email address.");
                     return;
                 }
 
@@ -58,6 +64,11 @@ public class Registration extends AppCompatActivity {
 
                 if (pass.length() < 8) {
                     mPassword.setError("Password must be at least 8 characters.");
+                }
+
+                else if (!pass.equals(verifypass)) {);
+                    mVerifyPassword.setError("Passwords do not match.");
+
                 } else {
                     auth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
