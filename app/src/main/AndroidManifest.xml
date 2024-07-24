@@ -17,6 +17,7 @@
         <activity
             android:name=".UI.Registration"
             android:exported="false"
+            android:label="Register"
             android:parentActivityName=".UI.Login" />
         <activity
             android:name=".UI.Login"
